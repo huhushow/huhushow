@@ -22,7 +22,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://huhushow.github.io/huhushow/ceos-hangeul-beulrogeu.html">첫 한글 블로그</a></h1>
+                    <h1 class="entry-title"><a href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html">블로그 개시 자동화 하기</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2016-10-10T15:00:00-04:00">
                 Published: 월 10 10월 2016
@@ -33,14 +33,48 @@
         </address>
 <p>In <a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a>.</p>
 
-</footer><!-- /.post-info --><p>한글 문서는 잘 작성되는지 테스트 해보는 중.
-ATOM을 설치해서 remote ftp로 글을 작성해 보고 있음. markdown preview는 작동하지 않공 있음. 일단은 잘 올라가는지 보고싶다.
-약간의 에러는 있지만 일단 올라가는건 성공.</p>                </article>
+</footer><!-- /.post-info --><p>Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
+사용한다. 나는 Python이 익숙하기 때문에 <a href="http://getpelican.com/">Pelican</a> 을 사용하여 글을 쓰고 있다. 때문에 일반적인 블로그에서는 찾아보기 힘든 문제가 발생한다.</p>
+<p>Pelican을 사용하기 위한 패키지들 중 일부가 윈도우 환경에서는 정상적으로 작동하지 않는 것이다. 이런 경우 선호하는 방법인 'VM 생성 후 리눅스 설치 -&gt; 윈도우 에디터의 FTP 편집 기능으로 문서 편집' 의 방법으로 글을 쓰고 있다.</p>
+<ul>
+<li>powershell 설치</li>
+<li>Posh-SSH 모듈 설치</li>
+<li>PSCredential 객체 생성</li>
+<li>Read-Host -AsSecureString | ConvertFrom-SecureString | Out-File $out</li>
+<li>$Ssh=New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, (Get-Content $out | ConvertTo-SecureString)</li>
+<li>SSH 세션 생성</li>
+<li>New-SSHSession -ComputerName $host -Credential ($Ssh)</li>
+<li>SSH 명령어 실행</li>
+</ul>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <hr />
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://huhushow.github.io/huhushow/ceos-hangeul-beulrogeu.html" rel="bookmark"
+                           title="Permalink to 첫 한글 블로그">첫 한글 블로그</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-10-10T15:00:00-04:00">
+                Published: 월 10 10월 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
+        </address>
+<p>In <a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a>.</p>
+
+</footer><!-- /.post-info -->                <p>한글 문서는 잘 작성되는지 테스트 해보는 중.
+ATOM을 설치해서 remote ftp로 글을 작성해 보고 있음. markdown preview는 작동하지 않공 있음. 일단은 잘 올라가는지 보고싶다.
+약간의 에러는 있지만 일단 올라가는건 성공.</p>
+                <a class="readmore" href="https://huhushow.github.io/huhushow/ceos-hangeul-beulrogeu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -95,6 +129,7 @@ This is my second blog for testing git push script.</p>
                             <li><a href="http://getpelican.com/">Pelican</a></li>
                             <li><a href="http://python.org/">Python.org</a></li>
                             <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://huhushow.tistory.com/">Old blog</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
                 <div class="social">
