@@ -27,11 +27,10 @@
 &lt;li&gt;Remove-SSHSession -Index $SessionInfo.SessionId&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;atom에서 markdown 저장 시 위의 스크립트 실행&lt;ul&gt;
-&lt;li&gt;에 관해 생각하는중&lt;/li&gt;
-&lt;li&gt;테스트중&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;atom에서 markdown 저장 시 위의 스크립트 실행&lt;ul&gt;
+&lt;li&gt;atom-shell-commands 패키지로 단축키 지정&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><title>첫 한글 블로그</title><link href="https://huhushow.github.io/huhushow/ceos-hangeul-beulrogeu.html" rel="alternate"></link><published>2016-10-10T15:00:00-04:00</published><updated>2016-10-10T15:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-10:huhushow/ceos-hangeul-beulrogeu.html</id><summary type="html">&lt;p&gt;한글 문서는 잘 작성되는지 테스트 해보는 중.
