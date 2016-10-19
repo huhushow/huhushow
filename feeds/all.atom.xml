@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2016-10-12T22:00:00-04:00</updated><entry><title>블로그 개시 자동화 하기</title><link href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html" rel="alternate"></link><published>2016-10-12T22:00:00-04:00</published><updated>2016-10-12T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-12:huhushow/beulrogeu-gaesi-jadonghwa-hagi.html</id><summary type="html">&lt;p&gt;Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2016-10-18T22:00:00-04:00</updated><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/docker-hello-world.html</id><summary type="html">&lt;p&gt;컨테이너 소프트웨어. 리눅스 기반의 격리된 실행환경을 제공. 도커 이미지를 도커 엔진에 실행시키는 형태이다. 여기까지는 가상머신과 크게 다를것이 없다. 하지만 도커는 아래와 같은 점으로 인해 가상머신에 비해 좀 더 체계적인 관리가 가능하다.
+&lt;em&gt; 계층화된 이미지 구조를 통해 변경사항 배포 시 보다 적은 트래픽 사용
+&lt;/em&gt; 이미지의 버전관리 및 히스토리 관리를 기본적으로 지원
+* 도커허브(이미지 저장소)를 통해 이미지를 공유하고 관리&lt;/p&gt;
+&lt;p&gt;계속 작성중...&lt;/p&gt;</summary></entry><entry><title>Bash keyboard shortcut</title><link href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html" rel="alternate"></link><published>2016-10-18T17:00:00-04:00</published><updated>2016-10-18T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/bash-keyboard-shortcut.html</id><summary type="html">&lt;p&gt;from &lt;a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/"&gt;howtogeek.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ctrl + A
+Go to the beginning of the line you are currently typing on&lt;/p&gt;
+&lt;p&gt;Ctrl + E
+Go to the End of the line you are currently typing on&lt;/p&gt;
+&lt;p&gt;Ctrl + L              
+CLears the Screen, similar to the clear command&lt;/p&gt;
+&lt;p&gt;Ctrl + U
+Clears the line before the cursor position. If you are at the end of the line, clears the entire line.&lt;/p&gt;
+&lt;p&gt;Ctrl + H
+Same as backspace&lt;/p&gt;
+&lt;p&gt;Ctrl + R
+Let’s you seaRch through previously used commands&lt;/p&gt;
+&lt;p&gt;Ctrl + C
+Kill whatever you are running&lt;/p&gt;
+&lt;p&gt;Ctrl + D
+Exit the current shell&lt;/p&gt;
+&lt;p&gt;Ctrl + Z
+Puts whatever you are running into a suspended background process. fg restores it.&lt;/p&gt;
+&lt;p&gt;Ctrl + W
+Delete the Word before the cursor&lt;/p&gt;
+&lt;p&gt;Ctrl + K
+Clear the line after the cursor&lt;/p&gt;
+&lt;p&gt;Ctrl + T
+Swap the last Two characters before the cursor&lt;/p&gt;
+&lt;p&gt;Alt + F
+Move cursor Forward one word on the current line&lt;/p&gt;
+&lt;p&gt;Alt + B
+Move cursor Backward one word on the current line&lt;/p&gt;
+&lt;p&gt;Tab
+Auto-complete files and folder names&lt;/p&gt;</summary></entry><entry><title>블로그 개시 자동화 하기</title><link href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html" rel="alternate"></link><published>2016-10-12T22:00:00-04:00</published><updated>2016-10-12T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-12:huhushow/beulrogeu-gaesi-jadonghwa-hagi.html</id><summary type="html">&lt;p&gt;Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
 사용한다. 나는 Python이 익숙하기 때문에 &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt; 을 사용하여 글을 쓰고 있다. 때문에 일반적인 블로그에서는 찾아보기 힘든 문제가 발생한다.&lt;/p&gt;
 &lt;p&gt;Pelican을 사용하기 위한 패키지들 중 일부가 윈도우 환경에서는 정상적으로 작동하지 않는 것이다. 이런 경우 선호하는 방법인 'VM 생성 후 리눅스 설치 -&amp;gt; 윈도우 에디터의 FTP 편집 기능으로 문서 편집' 의 방법으로 글을 쓰고 있다.&lt;/p&gt;
 &lt;p&gt;이럴 경우 매번 원격으로 리눅스 VM에 접속해 github에 푸시를 해줘야 하기 때문에 이를 윈도우에서 자동화 할 방법을 찾아봤다. 두가지 방법이 떠올랐는데 리눅스에서 해당 디렉토리의 변경사항을 감지해 푸시 시켜주거나 푸시 스크립트를 작성해 원도우에서 실행시켜주는 것이다. 후자의 경우 윈도우가 아니라면 간단한 ssh 명령어로 쉽게 처리 가능했겠지만, 윈도우 cmd에서는 ssh 접속이 안되기 때문에 절차가 조금 복잡해진다. 대강 아래와 같은 방법으로 처리하게 되었다.&lt;/p&gt;

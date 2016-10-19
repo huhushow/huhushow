@@ -16,13 +16,72 @@
                 <h1><a href="https://huhushow.github.io/huhushow/">Huhushow's Blog </a></h1>
                 <nav><ul>
                     <li><a href="https://huhushow.github.io/huhushow/pages/about.html">About</a></li>
+                    <li><a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a></li>
                     <li><a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html">블로그 개시 자동화 하기</a></h1>
+                    <h1 class="entry-title"><a href="https://huhushow.github.io/huhushow/docker-hello-world.html">Docker hello world</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-10-18T22:00:00-04:00">
+                Published: 화 18 10월 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
+        </address>
+<p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
+
+</footer><!-- /.post-info --><p>컨테이너 소프트웨어. 리눅스 기반의 격리된 실행환경을 제공. 도커 이미지를 도커 엔진에 실행시키는 형태이다. 여기까지는 가상머신과 크게 다를것이 없다. 하지만 도커는 아래와 같은 점으로 인해 가상머신에 비해 좀 더 체계적인 관리가 가능하다.
+<em> 계층화된 이미지 구조를 통해 변경사항 배포 시 보다 적은 트래픽 사용
+</em> 이미지의 버전관리 및 히스토리 관리를 기본적으로 지원
+* 도커허브(이미지 저장소)를 통해 이미지를 공유하고 관리</p>
+<p>계속 작성중...</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html" rel="bookmark"
+                           title="Permalink to Bash keyboard shortcut">Bash keyboard shortcut</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-10-18T17:00:00-04:00">
+                Published: 화 18 10월 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
+        </address>
+<p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
+
+</footer><!-- /.post-info -->                <p>from <a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/">howtogeek.com</a></p>
+<p>Ctrl + A
+Go to the beginning of the line you are currently typing on</p>
+<p>Ctrl + E
+Go to the End of the line you are currently typing on</p>
+<p>Ctrl + L              
+CLears the Screen, similar to the clear command</p>
+<p>Ctrl + U
+Clears the line before the cursor position ...</p>
+                <a class="readmore" href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html" rel="bookmark"
+                           title="Permalink to 블로그 개시 자동화 하기">블로그 개시 자동화 하기</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2016-10-12T22:00:00-04:00">
                 Published: 수 12 10월 2016
@@ -33,46 +92,12 @@
         </address>
 <p>In <a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a>.</p>
 
-</footer><!-- /.post-info --><p>Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
+</footer><!-- /.post-info -->                <p>Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
 사용한다. 나는 Python이 익숙하기 때문에 <a href="http://getpelican.com/">Pelican</a> 을 사용하여 글을 쓰고 있다. 때문에 일반적인 블로그에서는 찾아보기 힘든 문제가 발생한다.</p>
-<p>Pelican을 사용하기 위한 패키지들 중 일부가 윈도우 환경에서는 정상적으로 작동하지 않는 것이다. 이런 경우 선호하는 방법인 'VM 생성 후 리눅스 설치 -&gt; 윈도우 에디터의 FTP 편집 기능으로 문서 편집' 의 방법으로 글을 쓰고 있다.</p>
-<p>이럴 경우 매번 원격으로 리눅스 VM에 접속해 github에 푸시를 해줘야 하기 때문에 이를 윈도우에서 자동화 할 방법을 찾아봤다. 두가지 방법이 떠올랐는데 리눅스에서 해당 디렉토리의 변경사항을 감지해 푸시 시켜주거나 푸시 스크립트를 작성해 원도우에서 실행시켜주는 것이다. 후자의 경우 윈도우가 아니라면 간단한 ssh 명령어로 쉽게 처리 가능했겠지만, 윈도우 cmd에서는 ssh 접속이 안되기 때문에 절차가 조금 복잡해진다. 대강 아래와 같은 방법으로 처리하게 되었다.</p>
-<ul>
-<li>powershell 설치</li>
-<li>Posh-SSH 모듈 설치</li>
-<li>SSH 명령 실행 스크립트에서 사용할 암호화된 리눅스 비밀번호 파일 생성<ul>
-<li>Read-Host -AsSecureString | ConvertFrom-SecureString | Out-File $passwd</li>
-</ul>
-</li>
-<li>SSH 명령을 실행하는 스크립트 파일 작성<ul>
-<li>PSCredential 객체 생성<ul>
-<li>$SSHCredential=New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, (Get-Content $passwd | ConvertTo-SecureString)</li>
-</ul>
-</li>
-<li>SSH 세션 생성<ul>
-<li>$SessionInfo = New-SSHSession -ComputerName $SSHhost -Credential ($SSHCredential)</li>
-</ul>
-</li>
-<li>SSH 명령어 실행<ul>
-<li>Invoke-SSHCommand -Index $SessionInfo.SessionId -Command "make github"</li>
-</ul>
-</li>
-<li>SSH 세션 종료<ul>
-<li>Remove-SSHSession -Index $SessionInfo.SessionId</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>atom에서 markdown 저장 시 위의 스크립트 실행<ul>
-<li>atom-shell-commands 패키지로 단축키 지정</li>
-</ul>
-</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>Pelican을 사용하기 위한 패키지들 중 일부가 윈도우 환경에서는 정상적으로 작동하지 않는 것이다. 이런 경우 선호하는 방법인 'VM 생성 후 리눅스 설치 ...</p>
+                <a class="readmore" href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
