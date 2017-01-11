@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
         <meta charset="utf-8" />
-        <title>Docker hello world</title>
+        <title>How to paging list</title>
         <link rel="stylesheet" href="https://huhushow.github.io/huhushow/theme/css/main.css" />
         <link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Huhushow's Blog Atom Feed" />
 
@@ -24,14 +24,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="bookmark"
-           title="Permalink to Docker hello world">Docker hello world</a></h1>
+        <a href="https://huhushow.github.io/huhushow/how-to-paging-list.html" rel="bookmark"
+           title="Permalink to How to paging list">How to paging list</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2016-10-18T22:00:00-04:00">
-                Published: 화 18 10월 2016
+        <abbr class="published" title="2017-01-05T16:00:00-05:00">
+                Published: 목 05 1월 2017
         </abbr>
 
         <address class="vcard author">
@@ -39,33 +39,24 @@
         </address>
 <p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
 
-</footer><!-- /.post-info -->      <h3>What is docker?</h3>
+</footer><!-- /.post-info -->      <h3>What is paging?</h3>
+<p>A technique that divides a large amount of data into a certain number of pieces.
+많은 수의 자료를 일정한 숫자 만큼 나누어 보여주는 기술</p>
+<h3>Why using paging?</h3>
+<p>Both human and machine would hard to handle a large amount of data.
+사람과 기계 모두 한번에 많은 수의 데이터를 처리하기엔 힘들기 때문</p>
+<h3>How paging works?</h3>
+<ol>
+<li>Front-end gives to back-end their data range</li>
+<li>Back-end loads data by given range from front-end</li>
+<li>Also back-end gives summary of total data to front-end. that data used by paging function.</li>
+</ol>
+<h3>What do I practice?</h3>
 <ul>
-<li>Container software</li>
-<li>Docker provides linux-based isolated environment</li>
-<li>Docker engine runs docker image</li>
+<li>Simple </li>
 </ul>
-<h3>Why docker better than VM?</h3>
-<ul>
-<li>Docker is more efficient for delivery cause that's hierarchical image structure.</li>
-<li>Docker can control version and history by default.</li>
-<li>Docker can management and share image by repository like docker hub.</li>
-</ul>
-<h3>How to run docker?</h3>
-<ul>
-<li>search image
-  <code>docker search $keyword</code></li>
-<li>download or create image</li>
-<li>download
-    <code>docker pull $image:$tag</code></li>
-<li>create
-    <code># make base image
-    docker import $basetar $imge:$tag
-    # make image
-    docker build --tag $image:$tag $dockerfile</code></li>
-<li>run image
-    <code>docker run -i -t --name $container $image:$tag</code></li>
-</ul>
+<h3>practice environment</h3>
+<p>*</p>
     </div><!-- /.entry-content -->
     <div class="google-ads">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

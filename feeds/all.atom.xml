@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2016-10-18T22:00:00-04:00</updated><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/docker-hello-world.html</id><summary type="html">&lt;p&gt;컨테이너 소프트웨어. 리눅스 기반의 격리된 실행환경을 제공. 도커 이미지를 도커 엔진에 실행시키는 형태이다. 여기까지는 가상머신과 크게 다를것이 없다. 하지만 도커는 아래와 같은 점으로 인해 가상머신에 비해 좀 더 체계적인 관리가 가능하다.
-&lt;em&gt; 계층화된 이미지 구조를 통해 변경사항 배포 시 보다 적은 트래픽 사용
-&lt;/em&gt; 이미지의 버전관리 및 히스토리 관리를 기본적으로 지원
-* 도커허브(이미지 저장소)를 통해 이미지를 공유하고 관리&lt;/p&gt;
-&lt;p&gt;계속 작성중...&lt;/p&gt;</summary></entry><entry><title>VirtualBox 윈도우 서비스로 실행하기</title><link href="https://huhushow.github.io/huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html</id><summary type="html">&lt;p&gt;윈도우에서 개발을 위해 &lt;a href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt;를 사용할 경우 부팅할때마다 VM을 수동으로 실행시키긴 귀찮기 때문에 많은 사람들이 이를 자동으로 수행해주는 스크립트 등을 사용하곤 한다. 나도 처음에는 직접 작성하였지만 &lt;a href="http://vboxvmservice.sourceforge.net/"&gt;VBoxVmService&lt;/a&gt;라는 편한 프로그램을 발견한 후에는 그냥 이녀석을 사용하고 있다.&lt;/p&gt;</summary></entry><entry><title>Bash keyboard shortcut</title><link href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html" rel="alternate"></link><published>2016-10-18T17:00:00-04:00</published><updated>2016-10-18T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/bash-keyboard-shortcut.html</id><summary type="html">&lt;p&gt;from &lt;a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/"&gt;howtogeek.com&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2017-01-05T16:00:00-05:00</updated><entry><title>How to paging list</title><link href="https://huhushow.github.io/huhushow/how-to-paging-list.html" rel="alternate"></link><published>2017-01-05T16:00:00-05:00</published><updated>2017-01-05T16:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-05:huhushow/how-to-paging-list.html</id><summary type="html">&lt;h3&gt;What is paging?&lt;/h3&gt;
+&lt;p&gt;A technique that divides a large amount of data into a certain number of pieces.
+많은 수의 자료를 일정한 숫자 만큼 나누어 보여주는 기술&lt;/p&gt;
+&lt;h3&gt;Why using paging?&lt;/h3&gt;
+&lt;p&gt;Both human and machine would hard to handle a large amount of data.
+사람과 기계 모두 한번에 많은 수의 데이터를 처리하기엔 힘들기 때문&lt;/p&gt;
+&lt;h3&gt;How paging works?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Front-end gives to back-end their data range&lt;/li&gt;
+&lt;li&gt;Back-end loads data by given range from front-end&lt;/li&gt;
+&lt;li&gt;Also back-end gives summary of total data to front-end. that data used by paging function.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;What do I practice?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Simple &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;practice environment&lt;/h3&gt;
+&lt;p&gt;*&lt;/p&gt;</summary></entry><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/docker-hello-world.html</id><summary type="html">&lt;h3&gt;What is docker?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Container software&lt;/li&gt;
+&lt;li&gt;Docker provides linux-based isolated environment&lt;/li&gt;
+&lt;li&gt;Docker engine runs docker image&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Why docker better than VM?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker is more efficient for delivery cause that's hierarchical image structure.&lt;/li&gt;
+&lt;li&gt;Docker can control version and history by default.&lt;/li&gt;
+&lt;li&gt;Docker can management and share image by repository like docker hub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;How to run docker?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;search image
+  &lt;code&gt;docker search $keyword&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;download or create image&lt;/li&gt;
+&lt;li&gt;download
+    &lt;code&gt;docker pull $image:$tag&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;create
+    &lt;code&gt;# make base image
+    docker import $basetar $imge:$tag
+    # make image
+    docker build --tag $image:$tag $dockerfile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;run image
+    &lt;code&gt;docker run -i -t --name $container $image:$tag&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>VirtualBox 윈도우 서비스로 실행하기</title><link href="https://huhushow.github.io/huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html</id><summary type="html">&lt;p&gt;윈도우에서 개발을 위해 &lt;a href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt;를 사용할 경우 부팅할때마다 VM을 수동으로 실행시키긴 귀찮기 때문에 많은 사람들이 이를 자동으로 수행해주는 스크립트 등을 사용하곤 한다. 나도 처음에는 직접 작성하였지만 &lt;a href="http://vboxvmservice.sourceforge.net/"&gt;VBoxVmService&lt;/a&gt;라는 편한 프로그램을 발견한 후에는 그냥 이녀석을 사용하고 있다.&lt;/p&gt;</summary></entry><entry><title>Bash keyboard shortcut</title><link href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html" rel="alternate"></link><published>2016-10-18T17:00:00-04:00</published><updated>2016-10-18T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/bash-keyboard-shortcut.html</id><summary type="html">&lt;p&gt;from &lt;a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/"&gt;howtogeek.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ctrl + A
 Go to the beginning of the line you are currently typing on&lt;/p&gt;
 &lt;p&gt;Ctrl + E
