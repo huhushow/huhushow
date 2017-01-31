@@ -40,11 +40,9 @@
 <p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
 
 </footer><!-- /.post-info -->      <h3>What is paging?</h3>
-<p>A technique that divides a large amount of data into a certain number of pieces.
-많은 수의 자료를 일정한 숫자 만큼 나누어 보여주는 기술</p>
+<p>A technique that divides a large amount of data into a certain number of pieces</p>
 <h3>Why using paging?</h3>
-<p>Both human and machine would hard to handle a large amount of data.
-사람과 기계 모두 한번에 많은 수의 데이터를 처리하기엔 힘들기 때문</p>
+<p>Both human and machine would hard to handle a large amount of data</p>
 <h3>How paging works?</h3>
 <ol>
 <li>Front-end gives to back-end their data range</li>
@@ -53,10 +51,34 @@
 </ol>
 <h3>What do I practice?</h3>
 <ul>
-<li>Simple </li>
+<li>Simple paging program(focus on SQL)</li>
+<li>Why paging SQL getting slower?</li>
+<li>think about more faster paging technique.</li>
 </ul>
-<h3>practice environment</h3>
-<p>*</p>
+<h3>Practice environment</h3>
+<ul>
+<li>python 3</li>
+<li>flask 0.12</li>
+<li>using <a href="https://github.com/pallets/flask/tree/master/examples/flaskr">flaskr</a></li>
+<li>sqlite</li>
+</ul>
+<h3>Simple Query</h3>
+<div class="highlight"><pre><span></span>@app.route(&#39;/list/&lt;int:page_id&gt;&#39;, methods=[&#39;GET&#39;])
+def show_page(page_id):
+    cnt = 10
+    offset_num = cnt * (page_id - 1)
+    db = get_db()
+    cur = db.execute(&#39;select title, content from entries order by idx desc limit ? offset ?&#39;,
+                    [cnt, offset_num])
+    entries = cur.fetchall()
+    return render_template(&#39;show_entries.html&#39;, entries=entries)
+</pre></div>
+
+
+<ul>
+<li>using limit query is really easy to make paging function</li>
+<li></li>
+</ul>
     </div><!-- /.entry-content -->
     <div class="google-ads">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

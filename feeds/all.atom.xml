@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2017-01-05T16:00:00-05:00</updated><entry><title>How to paging list</title><link href="https://huhushow.github.io/huhushow/how-to-paging-list.html" rel="alternate"></link><published>2017-01-05T16:00:00-05:00</published><updated>2017-01-05T16:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-05:huhushow/how-to-paging-list.html</id><summary type="html">&lt;h3&gt;What is paging?&lt;/h3&gt;
-&lt;p&gt;A technique that divides a large amount of data into a certain number of pieces.
-많은 수의 자료를 일정한 숫자 만큼 나누어 보여주는 기술&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2017-01-17T15:00:00-05:00</updated><entry><title>language version manager vs docker</title><link href="https://huhushow.github.io/huhushow/language-version-manager-vs-docker.html" rel="alternate"></link><published>2017-01-17T15:00:00-05:00</published><updated>2017-01-17T15:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-17:huhushow/language-version-manager-vs-docker.html</id><summary type="html">&lt;p&gt;소프트웨어 산업이 발전함에 따라 수많은 소프트웨어들이 등장하였다. 그에 따라 이러한 많은 소프트웨어들을 재사용 혹은 조합하여 소프트웨어를 개발하는 일이 보편화 되었다. 점점 더 많은 라이브러리, 패키지 들이 등장하게 되었고 이들 또한 또다른 프로그램들과 복잡한 의존 관계를 갖게 되었다. 떄문에 이러한 복잡한 의존 관계를 관리하는 패키지 관리 도구, 각각의 프로그램의 의존 관계가 서로 충돌하는것을 방지하기 위한 실행 환경 격리 도구 등이 개발되어 사용되기 시작하였다. OS의 패키지를 관리해주는 YUM, APT 프로그래밍 언어의 패키지를 관리해주는 PIP, NPM 프로그래밍 언어의 버전을 관리해주는 pyenv, nvm 등의 프로그램들이다.
+이와는 별개로 최근 여러 이유로 OS의 실행환경을 격리하여 독립된 실행환경을 구성하는 기술들이 빠르게 발전하고 있는데 가장 대표적인 것이 Docker 이다.
+위의 도구들과 Docker의 용도가 서로 동일한것은 아니지만 일정 부분 겹쳐지는 면도 있다. &lt;/p&gt;
+&lt;p&gt;소프트웨어 개발 산업이 발전함 -&amp;gt; 수많은 공개된 패키지들을 재사용해 소프트웨어를 개발하는 일이 보편화됨. -&amp;gt; 사용하는 각종 패키지, 라이브러리 심지어 언어 구현체 버전에 대한 관리가 필요해짐 -&amp;gt; pip, npm 등의 패키지 매니저와 pyenv, nvm 등의 언어 버전 메니저 등의 프로그램이 등장 -&amp;gt; 도커의 등장 -&amp;gt; 동일 머신 내에서 여러 프로그램 실행을 위해 각각의 격리된 실행환경을 구성하는 방법의 선택지가 두가지가 됨&lt;/p&gt;</summary></entry><entry><title>How to paging list</title><link href="https://huhushow.github.io/huhushow/how-to-paging-list.html" rel="alternate"></link><published>2017-01-05T16:00:00-05:00</published><updated>2017-01-05T16:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-05:huhushow/how-to-paging-list.html</id><summary type="html">&lt;h3&gt;What is paging?&lt;/h3&gt;
+&lt;p&gt;A technique that divides a large amount of data into a certain number of pieces&lt;/p&gt;
 &lt;h3&gt;Why using paging?&lt;/h3&gt;
-&lt;p&gt;Both human and machine would hard to handle a large amount of data.
-사람과 기계 모두 한번에 많은 수의 데이터를 처리하기엔 힘들기 때문&lt;/p&gt;
+&lt;p&gt;Both human and machine would hard to handle a large amount of data&lt;/p&gt;
 &lt;h3&gt;How paging works?&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Front-end gives to back-end their data range&lt;/li&gt;
@@ -13,10 +14,34 @@
 &lt;/ol&gt;
 &lt;h3&gt;What do I practice?&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Simple &lt;/li&gt;
+&lt;li&gt;Simple paging program(focus on SQL)&lt;/li&gt;
+&lt;li&gt;Why paging SQL getting slower?&lt;/li&gt;
+&lt;li&gt;think about more faster paging technique.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;practice environment&lt;/h3&gt;
-&lt;p&gt;*&lt;/p&gt;</summary></entry><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/docker-hello-world.html</id><summary type="html">&lt;h3&gt;What is docker?&lt;/h3&gt;
+&lt;h3&gt;Practice environment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;python 3&lt;/li&gt;
+&lt;li&gt;flask 0.12&lt;/li&gt;
+&lt;li&gt;using &lt;a href="https://github.com/pallets/flask/tree/master/examples/flaskr"&gt;flaskr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;sqlite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Simple Query&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@app.route(&amp;#39;/list/&amp;lt;int:page_id&amp;gt;&amp;#39;, methods=[&amp;#39;GET&amp;#39;])
+def show_page(page_id):
+    cnt = 10
+    offset_num = cnt * (page_id - 1)
+    db = get_db()
+    cur = db.execute(&amp;#39;select title, content from entries order by idx desc limit ? offset ?&amp;#39;,
+                    [cnt, offset_num])
+    entries = cur.fetchall()
+    return render_template(&amp;#39;show_entries.html&amp;#39;, entries=entries)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;using limit query is really easy to make paging function&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/docker-hello-world.html</id><summary type="html">&lt;h3&gt;What is docker?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Container software&lt;/li&gt;
 &lt;li&gt;Docker provides linux-based isolated environment&lt;/li&gt;
@@ -108,7 +133,8 @@ Auto-complete files and folder names&lt;/p&gt;</summary></entry><entry><title>�
 &lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><title>첫 한글 블로그</title><link href="https://huhushow.github.io/huhushow/ceos-hangeul-beulrogeu.html" rel="alternate"></link><published>2016-10-10T15:00:00-04:00</published><updated>2016-10-10T15:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-10:huhushow/ceos-hangeul-beulrogeu.html</id><summary type="html">&lt;p&gt;한글 문서는 잘 작성되는지 테스트 해보는 중.
 ATOM을 설치해서 remote ftp로 글을 작성해 보고 있음. markdown preview는 작동하지 않공 있음. 일단은 잘 올라가는지 보고싶다.
-약간의 에러는 있지만 일단 올라가는건 성공.&lt;/p&gt;</summary></entry><entry><title>My Second Github Pages Blog</title><link href="https://huhushow.github.io/huhushow/my-second-github-pages-blog.html" rel="alternate"></link><published>2016-10-04T17:00:00-04:00</published><updated>2016-10-04T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-04:huhushow/my-second-github-pages-blog.html</id><summary type="html">&lt;p&gt;ghp-import is not work well. that cause .git error. because I fix Makefile for pushing to github
+약간의 에러는 있지만 일단 올라가는건 성공.
+atom 대신 vscode 쓰는중.&lt;/p&gt;</summary></entry><entry><title>My Second Github Pages Blog</title><link href="https://huhushow.github.io/huhushow/my-second-github-pages-blog.html" rel="alternate"></link><published>2016-10-04T17:00:00-04:00</published><updated>2016-10-04T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-04:huhushow/my-second-github-pages-blog.html</id><summary type="html">&lt;p&gt;ghp-import is not work well. that cause .git error. because I fix Makefile for pushing to github
 This is my second blog for testing git push script.&lt;/p&gt;</summary></entry><entry><title>My First Github Pages Blog</title><link href="https://huhushow.github.io/huhushow/my-first-github-pages-blog.html" rel="alternate"></link><published>2016-10-03T21:00:00-04:00</published><updated>2016-10-03T21:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-03:huhushow/my-first-github-pages-blog.html</id><summary type="html">&lt;p&gt;This is my first blog posting on github pages by python pelican.&lt;/p&gt;</summary></entry><entry><title>Using commend line parameter in ansible_playbook</title><link href="https://huhushow.github.io/huhushow/using-commend-line-parameter-in-ansible_playbook.html" rel="alternate"></link><published>2016-02-25T12:30:00-05:00</published><updated>2016-02-25T12:30:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-02-25:huhushow/using-commend-line-parameter-in-ansible_playbook.html</id><summary type="html">&lt;p&gt;예전에 만든 ansible 배포 스크립트는 소스를 FTP로 받아오는 방식이었다. 그러다보니 버전별 배포가 복잡해져서 타겟 소스를 Git을 통해 받아오는 방식으로 바꿨다. Git clone 하는거야 ansible에 git 모듈을 이용하면 간단하다. 특정 tag등을 지정하기 위해서 커맨드라인 변수를 받아오는것도 간단한데 유용할듯 해서 남겨본다.&lt;/p&gt;
 &lt;script src="https://gist.github.com/huhushow/639a417cf2b5bb33b783.js"&gt;&lt;/script&gt;
 
