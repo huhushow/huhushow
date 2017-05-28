@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
         <meta charset="utf-8" />
-        <title>Huhushow's Blog</title>
+        <title>Docker hello world</title>
         <link rel="stylesheet" href="https://huhushow.github.io/huhushow/theme/css/main.css" />
         <link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Huhushow's Blog Atom Feed" />
 
@@ -18,7 +18,7 @@
                     <li><a href="https://huhushow.github.io/huhushow/pages/using-commend-line-parameter-in-ansible_playbook.html">Using commend line parameter in ansible_playbook</a></li>
                     <li><a href="https://huhushow.github.io/huhushow/pages/bash-keyboard-shortcut.html">Bash keyboard shortcut</a></li>
                     <li><a href="https://huhushow.github.io/huhushow/pages/beulrogeu-gaesi-jadonghwa-hagi.html">블로그 개시 자동화 하기</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/docker-hello-world.html">Docker hello world</a></li>
+                    <li class="active"><a href="https://huhushow.github.io/huhushow/pages/docker-hello-world.html">Docker hello world</a></li>
                     <li><a href="https://huhushow.github.io/huhushow/pages/ceos-hangeul-beulrogeu.html">첫 한글 블로그</a></li>
                     <li><a href="https://huhushow.github.io/huhushow/pages/my-first-github-pages-blog.html">My First Github Pages Blog</a></li>
                     <li><a href="https://huhushow.github.io/huhushow/pages/mysql-load-data-infile.html">MySQL load data infile 문 사용하기</a></li>
@@ -28,8 +28,37 @@
                     <li><a href="https://huhushow.github.io/huhushow/pages/virtualbox-windou-seobiseuro-silhaenghagi.html">VirtualBox 윈도우 서비스로 실행하기</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Docker hello world</h1>
+    
+    <h3>What is docker?</h3>
 <ul>
+<li>Container software</li>
+<li>Docker provides linux-based isolated environment</li>
+<li>Docker engine runs docker image</li>
 </ul>
+<h3>Why docker better than VM?</h3>
+<ul>
+<li>Docker is more efficient for delivery cause that's hierarchical image structure.</li>
+<li>Docker can control version and history by default.</li>
+<li>Docker can management and share image by repository like docker hub.</li>
+</ul>
+<h3>How to run docker?</h3>
+<ul>
+<li>search image
+  <code>docker search $keyword</code></li>
+<li>download or create image</li>
+<li>download
+    <code>docker pull $image:$tag</code></li>
+<li>create
+    <code># make base image
+    docker import $basetar $imge:$tag
+    # make image
+    docker build --tag $image:$tag $dockerfile</code></li>
+<li>run image
+    <code>docker run -i -t --name $container $image:$tag</code></li>
+</ul>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
