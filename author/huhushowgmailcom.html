@@ -22,7 +22,61 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://huhushow.github.io/huhushow/translate-test.html">번역 테스트</a></h1>
+                    <h1 class="entry-title"><a href="https://huhushow.github.io/huhushow/mysql-load-data-infile.html">MySQL load data infile 문 사용하기</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-05-28T18:00:00-04:00">
+                Published: 일 28 5월 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
+        </address>
+<p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
+
+</footer><!-- /.post-info --><h3>LOAD DATA INFILE 문이란?</h3>
+<p>텍스트 파일을 읽어서 테이블로 데이터를 입력하는 명령어이다. 한번에 많은 데이터를 입력해야 할 때 주로 쓰인다. 간단한 구문이지만 파일 형식애 대한 정보를 입력해줘야 한다. 구문의 간단한 구조는 아래와 같다 자세한 정보는 <a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html">MySQL Document</a> 를 참조하자.</p>
+<div class="highlight"><pre><span></span>LOAD DATA INFILE &#39;file_name&#39;  -- 입력할 파일의 경로
+INTO TABLE tbl_name  -- 입력받을 테이블의 이름
+FIELDS  -- 라인 내의 필드들을 구분하는 방법
+    TERMINATED BY &#39;,&#39;  -- 각 필드가 끝나는 구분문자를 지정해줌
+    ENCLOSED BY &#39;&quot;&#39;  -- 구분뒨 필드 내에서 시작/끝 을 알리는 문자를 지정해줌
+LINES  -- 각 라인을 구분하는 방법
+    TERMINATED BY &#39;\n&#39;  -- 각 라인이 끝나는 구분문자를 지정해줌
+IGNORE 1 LINES  -- 처리하지 않을 라인을 지정해줌
+</pre></div>
+
+
+<h3>테스트</h3>
+<p>간단한 테스트를 위해 테스트 테이블을 만들어서 실제로 값을 입력해보자. 아래의 쿼리를 사용하여 테이블을 생성하였다.</p>
+<div class="highlight"><pre><span></span>CREATE TABLE `ldi_test`(  
+`id` INT NOT NULL,
+`char_col` VARCHAR(50) NOT NULL,
+`int_col` INT NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=INNODB CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO ldi_test VALUES(1, &#39;a&#39;, 1);
+INSERT INTO ldi_test VALUES(2, &#39;b&#39;, 2);
+INSERT INTO ldi_test VALUES(3, &#39;c&#39;, 3);
+</pre></div>
+
+
+<p>실행 후 테이블에는 다음과 같은 데이터가 입력되어 있다.<br>
+<img alt="default data" src="{filename}/images/ldi2.jpg"></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://huhushow.github.io/huhushow/translate-test.html" rel="bookmark"
+                           title="Permalink to 번역 테스트">번역 테스트</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-05-28T14:00:00-04:00">
                 Published: 일 28 5월 2017
@@ -35,12 +89,10 @@
 Translations:
         <a href="https://huhushow.github.io/huhushow/translate-test-en.html">en</a>
 
-</footer><!-- /.post-info --><p>이것은 번역 테스트 입니다.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>이것은 번역 테스트 입니다.</p>
+                <a class="readmore" href="https://huhushow.github.io/huhushow/translate-test.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -241,32 +293,11 @@ This is my second blog for testing git push script.</p>
                 <a class="readmore" href="https://huhushow.github.io/huhushow/my-first-github-pages-blog.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="https://huhushow.github.io/huhushow/using-commend-line-parameter-in-ansible_playbook.html" rel="bookmark"
-                           title="Permalink to Using commend line parameter in ansible_playbook">Using commend line parameter in ansible_playbook</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-02-25T12:30:00-05:00">
-                Published: 목 25 2월 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
-        </address>
-<p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
-
-</footer><!-- /.post-info -->                <p>예전에 만든 ansible 배포 스크립트는 소스를 FTP로 받아오는 방식이었다. 그러다보니 버전별 배포가 복잡해져서 타겟 소스를 Git을 통해 받아오는 방식으로 바꿨다. Git clone 하는거야 ansible에 git 모듈을 이용하면 간단하다. 특정 tag등을 지정하기 위해서 커맨드라인 변수를 받아오는것도 간단한데 유용할듯 해서 남겨본다.</p>
-<script src="https://gist.github.com/huhushow/639a417cf2b5bb33b783.js"></script>
-
-<p>변수의 경우 jinja2 탬플릿 문법을 사용하는데 필터를 사용해서 변수에 대한 여러 …</p>
-                <a class="readmore" href="https://huhushow.github.io/huhushow/using-commend-line-parameter-in-ansible_playbook.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
                 </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 2
+        <a href="https://huhushow.github.io/huhushow/author/huhushowgmailcom2.html">&raquo;</a>
+</p>
                 </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
