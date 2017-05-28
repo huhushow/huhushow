@@ -1,47 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/dev.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2017-01-17T15:00:00-05:00</updated><entry><title>language version manager vs docker</title><link href="https://huhushow.github.io/huhushow/language-version-manager-vs-docker.html" rel="alternate"></link><published>2017-01-17T15:00:00-05:00</published><updated>2017-01-17T15:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-17:huhushow/language-version-manager-vs-docker.html</id><summary type="html">&lt;p&gt;소프트웨어 산업이 발전함에 따라 수많은 소프트웨어들이 등장하였다. 그에 따라 이러한 많은 소프트웨어들을 재사용 혹은 조합하여 소프트웨어를 개발하는 일이 보편화 되었다. 점점 더 많은 라이브러리, 패키지 들이 등장하게 되었고 이들 또한 또다른 프로그램들과 복잡한 의존 관계를 갖게 되었다. 떄문에 이러한 복잡한 의존 관계를 관리하는 패키지 관리 도구, 각각의 프로그램의 의존 관계가 서로 충돌하는것을 방지하기 위한 실행 환경 격리 도구 등이 개발되어 사용되기 시작하였다. OS의 패키지를 관리해주는 YUM, APT 프로그래밍 언어의 패키지를 관리해주는 PIP, NPM 프로그래밍 언어의 버전을 관리해주는 pyenv, nvm 등의 프로그램들이다.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog - Dev</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/dev.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2017-01-17T15:00:00-05:00</updated><entry><title>language version manager vs docker</title><link href="https://huhushow.github.io/huhushow/language-version-manager-vs-docker.html" rel="alternate"></link><published>2017-01-17T15:00:00-05:00</published><updated>2017-01-17T15:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-17:/huhushow/language-version-manager-vs-docker.html</id><summary type="html">&lt;p&gt;소프트웨어 산업이 발전함에 따라 수많은 소프트웨어들이 등장하였다. 그에 따라 이러한 많은 소프트웨어들을 재사용 혹은 조합하여 소프트웨어를 개발하는 일이 보편화 되었다. 점점 더 많은 라이브러리, 패키지 들이 등장하게 되었고 이들 또한 또다른 프로그램들과 복잡한 의존 관계를 갖게 되었다. 떄문에 이러한 복잡한 의존 관계를 관리하는 패키지 관리 도구, 각각의 프로그램의 의존 관계가 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;소프트웨어 산업이 발전함에 따라 수많은 소프트웨어들이 등장하였다. 그에 따라 이러한 많은 소프트웨어들을 재사용 혹은 조합하여 소프트웨어를 개발하는 일이 보편화 되었다. 점점 더 많은 라이브러리, 패키지 들이 등장하게 되었고 이들 또한 또다른 프로그램들과 복잡한 의존 관계를 갖게 되었다. 떄문에 이러한 복잡한 의존 관계를 관리하는 패키지 관리 도구, 각각의 프로그램의 의존 관계가 서로 충돌하는것을 방지하기 위한 실행 환경 격리 도구 등이 개발되어 사용되기 시작하였다. OS의 패키지를 관리해주는 YUM, APT 프로그래밍 언어의 패키지를 관리해주는 PIP, NPM 프로그래밍 언어의 버전을 관리해주는 pyenv, nvm 등의 프로그램들이다.
 이와는 별개로 최근 여러 이유로 OS의 실행환경을 격리하여 독립된 실행환경을 구성하는 기술들이 빠르게 발전하고 있는데 가장 대표적인 것이 Docker 이다.
 위의 도구들과 Docker의 용도가 서로 동일한것은 아니지만 일정 부분 겹쳐지는 면도 있다. &lt;/p&gt;
-&lt;p&gt;소프트웨어 개발 산업이 발전함 -&amp;gt; 수많은 공개된 패키지들을 재사용해 소프트웨어를 개발하는 일이 보편화됨. -&amp;gt; 사용하는 각종 패키지, 라이브러리 심지어 언어 구현체 버전에 대한 관리가 필요해짐 -&amp;gt; pip, npm 등의 패키지 매니저와 pyenv, nvm 등의 언어 버전 메니저 등의 프로그램이 등장 -&amp;gt; 도커의 등장 -&amp;gt; 동일 머신 내에서 여러 프로그램 실행을 위해 각각의 격리된 실행환경을 구성하는 방법의 선택지가 두가지가 됨&lt;/p&gt;</summary></entry><entry><title>How to paging list</title><link href="https://huhushow.github.io/huhushow/how-to-paging-list.html" rel="alternate"></link><published>2017-01-05T16:00:00-05:00</published><updated>2017-01-05T16:00:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-01-05:huhushow/how-to-paging-list.html</id><summary type="html">&lt;h3&gt;What is paging?&lt;/h3&gt;
-&lt;p&gt;A technique that divides a large amount of data into a certain number of pieces&lt;/p&gt;
-&lt;h3&gt;Why using paging?&lt;/h3&gt;
-&lt;p&gt;Both human and machine would hard to handle a large amount of data&lt;/p&gt;
-&lt;h3&gt;How paging works?&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Front-end gives to back-end their data range&lt;/li&gt;
-&lt;li&gt;Back-end loads data by given range from front-end&lt;/li&gt;
-&lt;li&gt;Also back-end gives summary of total data to front-end. that data used by paging function.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;What do I practice?&lt;/h3&gt;
+&lt;p&gt;소프트웨어 개발 산업이 발전함 -&amp;gt; 수많은 공개된 패키지들을 재사용해 소프트웨어를 개발하는 일이 보편화됨. -&amp;gt; 사용하는 각종 패키지, 라이브러리 심지어 언어 구현체 버전에 대한 관리가 필요해짐 -&amp;gt; pip, npm 등의 패키지 매니저와 pyenv, nvm 등의 언어 버전 메니저 등의 프로그램이 등장 -&amp;gt; 도커의 등장 -&amp;gt; 동일 머신 내에서 여러 프로그램 실행을 위해 각각의 격리된 실행환경을 구성하는 방법의 선택지가 두가지가 됨&lt;/p&gt;</content></entry><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:/huhushow/docker-hello-world.html</id><summary type="html">&lt;h3&gt;What is docker?&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Simple paging program(focus on SQL)&lt;/li&gt;
-&lt;li&gt;Why paging SQL getting slower?&lt;/li&gt;
-&lt;li&gt;think about more faster paging technique.&lt;/li&gt;
+&lt;li&gt;Container software&lt;/li&gt;
+&lt;li&gt;Docker provides linux-based isolated environment&lt;/li&gt;
+&lt;li&gt;Docker engine runs docker image&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Practice environment&lt;/h3&gt;
+&lt;h3&gt;Why docker better than VM?&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;python 3&lt;/li&gt;
-&lt;li&gt;flask 0.12&lt;/li&gt;
-&lt;li&gt;using &lt;a href="https://github.com/pallets/flask/tree/master/examples/flaskr"&gt;flaskr&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;sqlite&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Simple Query&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@app.route(&amp;#39;/list/&amp;lt;int:page_id&amp;gt;&amp;#39;, methods=[&amp;#39;GET&amp;#39;])
-def show_page(page_id):
-    cnt = 10
-    offset_num = cnt * (page_id - 1)
-    db = get_db()
-    cur = db.execute(&amp;#39;select title, content from entries order by idx desc limit ? offset ?&amp;#39;,
-                    [cnt, offset_num])
-    entries = cur.fetchall()
-    return render_template(&amp;#39;show_entries.html&amp;#39;, entries=entries)
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;using limit query is really easy to make paging function&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>Docker hello world</title><link href="https://huhushow.github.io/huhushow/docker-hello-world.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/docker-hello-world.html</id><summary type="html">&lt;h3&gt;What is docker?&lt;/h3&gt;
+&lt;li&gt;Docker is more efficient for delivery cause that's hierarchical image structure.&lt;/li&gt;
+&lt;li&gt;Docker can control version and history by default.&lt;/li&gt;
+&lt;li&gt;Docker can management and share image by repository like docker hub …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;What is docker?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Container software&lt;/li&gt;
 &lt;li&gt;Docker provides linux-based isolated environment&lt;/li&gt;
@@ -67,7 +38,15 @@ def show_page(page_id):
     docker build --tag $image:$tag $dockerfile&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;run image
     &lt;code&gt;docker run -i -t --name $container $image:$tag&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><title>VirtualBox 윈도우 서비스로 실행하기</title><link href="https://huhushow.github.io/huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html</id><summary type="html">&lt;p&gt;윈도우에서 개발을 위해 &lt;a href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt;를 사용할 경우 부팅할때마다 VM을 수동으로 실행시키긴 귀찮기 때문에 많은 사람들이 이를 자동으로 수행해주는 스크립트 등을 사용하곤 한다. 나도 처음에는 직접 작성하였지만 &lt;a href="http://vboxvmservice.sourceforge.net/"&gt;VBoxVmService&lt;/a&gt;라는 편한 프로그램을 발견한 후에는 그냥 이녀석을 사용하고 있다.&lt;/p&gt;</summary></entry><entry><title>Bash keyboard shortcut</title><link href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html" rel="alternate"></link><published>2016-10-18T17:00:00-04:00</published><updated>2016-10-18T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:huhushow/bash-keyboard-shortcut.html</id><summary type="html">&lt;p&gt;from &lt;a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/"&gt;howtogeek.com&lt;/a&gt;&lt;/p&gt;
+&lt;/ul&gt;</content></entry><entry><title>VirtualBox 윈도우 서비스로 실행하기</title><link href="https://huhushow.github.io/huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html" rel="alternate"></link><published>2016-10-18T22:00:00-04:00</published><updated>2016-10-18T22:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:/huhushow/virtualbox-windou-seobiseuro-silhaenghagi.html</id><summary type="html">&lt;p&gt;윈도우에서 개발을 위해 &lt;a href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt;를 사용할 경우 부팅할때마다 VM을 수동으로 실행시키긴 귀찮기 때문에 많은 사람들이 이를 자동으로 수행해주는 스크립트 등을 사용하곤 한다. 나도 처음에는 직접 작성하였지만 &lt;a href="http://vboxvmservice.sourceforge.net/"&gt;VBoxVmService&lt;/a&gt;라는 편한 프로그램을 발견한 후에는 그냥 이녀석을 사용하고 있다.&lt;/p&gt;</summary><content type="html">&lt;p&gt;윈도우에서 개발을 위해 &lt;a href="https://www.virtualbox.org/"&gt;VirtualBox&lt;/a&gt;를 사용할 경우 부팅할때마다 VM을 수동으로 실행시키긴 귀찮기 때문에 많은 사람들이 이를 자동으로 수행해주는 스크립트 등을 사용하곤 한다. 나도 처음에는 직접 작성하였지만 &lt;a href="http://vboxvmservice.sourceforge.net/"&gt;VBoxVmService&lt;/a&gt;라는 편한 프로그램을 발견한 후에는 그냥 이녀석을 사용하고 있다.&lt;/p&gt;</content></entry><entry><title>Bash keyboard shortcut</title><link href="https://huhushow.github.io/huhushow/bash-keyboard-shortcut.html" rel="alternate"></link><published>2016-10-18T17:00:00-04:00</published><updated>2016-10-18T17:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-10-18:/huhushow/bash-keyboard-shortcut.html</id><summary type="html">&lt;p&gt;from &lt;a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/"&gt;howtogeek.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ctrl + A
+Go to the beginning of the line you are currently typing on&lt;/p&gt;
+&lt;p&gt;Ctrl + E
+Go to the End of the line you are currently typing on&lt;/p&gt;
+&lt;p&gt;Ctrl + L              
+CLears the Screen, similar to the clear command&lt;/p&gt;
+&lt;p&gt;Ctrl + U
+Clears the line before the cursor position …&lt;/p&gt;</summary><content type="html">&lt;p&gt;from &lt;a href="http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/"&gt;howtogeek.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ctrl + A
 Go to the beginning of the line you are currently typing on&lt;/p&gt;
 &lt;p&gt;Ctrl + E
@@ -97,10 +76,13 @@ Move cursor Forward one word on the current line&lt;/p&gt;
 &lt;p&gt;Alt + B
 Move cursor Backward one word on the current line&lt;/p&gt;
 &lt;p&gt;Tab
-Auto-complete files and folder names&lt;/p&gt;</summary></entry><entry><title>Using commend line parameter in ansible_playbook</title><link href="https://huhushow.github.io/huhushow/using-commend-line-parameter-in-ansible_playbook.html" rel="alternate"></link><published>2016-02-25T12:30:00-05:00</published><updated>2016-02-25T12:30:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-02-25:huhushow/using-commend-line-parameter-in-ansible_playbook.html</id><summary type="html">&lt;p&gt;예전에 만든 ansible 배포 스크립트는 소스를 FTP로 받아오는 방식이었다. 그러다보니 버전별 배포가 복잡해져서 타겟 소스를 Git을 통해 받아오는 방식으로 바꿨다. Git clone 하는거야 ansible에 git 모듈을 이용하면 간단하다. 특정 tag등을 지정하기 위해서 커맨드라인 변수를 받아오는것도 간단한데 유용할듯 해서 남겨본다.&lt;/p&gt;
+Auto-complete files and folder names&lt;/p&gt;</content></entry><entry><title>Using commend line parameter in ansible_playbook</title><link href="https://huhushow.github.io/huhushow/using-commend-line-parameter-in-ansible_playbook.html" rel="alternate"></link><published>2016-02-25T12:30:00-05:00</published><updated>2016-02-25T12:30:00-05:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2016-02-25:/huhushow/using-commend-line-parameter-in-ansible_playbook.html</id><summary type="html">&lt;p&gt;예전에 만든 ansible 배포 스크립트는 소스를 FTP로 받아오는 방식이었다. 그러다보니 버전별 배포가 복잡해져서 타겟 소스를 Git을 통해 받아오는 방식으로 바꿨다. Git clone 하는거야 ansible에 git 모듈을 이용하면 간단하다. 특정 tag등을 지정하기 위해서 커맨드라인 변수를 받아오는것도 간단한데 유용할듯 해서 남겨본다.&lt;/p&gt;
+&lt;script src="https://gist.github.com/huhushow/639a417cf2b5bb33b783.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;변수의 경우 jinja2 탬플릿 문법을 사용하는데 필터를 사용해서 변수에 대한 여러 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;예전에 만든 ansible 배포 스크립트는 소스를 FTP로 받아오는 방식이었다. 그러다보니 버전별 배포가 복잡해져서 타겟 소스를 Git을 통해 받아오는 방식으로 바꿨다. Git clone 하는거야 ansible에 git 모듈을 이용하면 간단하다. 특정 tag등을 지정하기 위해서 커맨드라인 변수를 받아오는것도 간단한데 유용할듯 해서 남겨본다.&lt;/p&gt;
 &lt;script src="https://gist.github.com/huhushow/639a417cf2b5bb33b783.js"&gt;&lt;/script&gt;
 
 &lt;p&gt;변수의 경우 jinja2 탬플릿 문법을 사용하는데 필터를 사용해서 변수에 대한 여러 처리를 해줄 수 있다. "{{ ver | default('develop') }}" 의 경우 ver 이라는 버전에 대한 변수가 없을 경우 기본값으로 develop 브런치를 가져오록 한 것이다. 변수를 문자열로 처리했는데 이는 YAML syntax의 dictionary 표현법인 { 떄문이다. 이렇게 플레이북을 작성했다면 다음과같이 실행시킬 수 있다.&lt;/p&gt;
 &lt;script src="https://gist.github.com/huhushow/b5f5d6c7445025b90a6e.js"&gt;&lt;/script&gt;
 
-&lt;p&gt;간단한 키-값 형식 또는&amp;nbsp;JSON 형식을 사용할 수 있다. json 형식으로 저장된 파일을 읽어올수도 있는데 그럴 경우 @ 마크로 파일임을 표시한다.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;간단한 키-값 형식 또는&amp;nbsp;JSON 형식을 사용할 수 있다. json 형식으로 저장된 파일을 읽어올수도 있는데 그럴 경우 @ 마크로 파일임을 표시한다.&lt;/p&gt;</content></entry></feed>
