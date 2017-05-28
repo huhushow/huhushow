@@ -15,23 +15,30 @@
         <header id="banner" class="body">
                 <h1><a href="https://huhushow.github.io/huhushow/">Huhushow's Blog </a></h1>
                 <nav><ul>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/using-commend-line-parameter-in-ansible_playbook.html">Using commend line parameter in ansible_playbook</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/bash-keyboard-shortcut.html">Bash keyboard shortcut</a></li>
-                    <li class="active"><a href="https://huhushow.github.io/huhushow/pages/beulrogeu-gaesi-jadonghwa-hagi.html">블로그 개시 자동화 하기</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/docker-hello-world.html">Docker hello world</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/ceos-hangeul-beulrogeu.html">첫 한글 블로그</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/my-first-github-pages-blog.html">My First Github Pages Blog</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/mysql-load-data-infile.html">MySQL load data infile 문 사용하기</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/language-version-manager-vs-docker.html">language version manager vs docker</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/my-second-github-pages-blog.html">My Second Github Pages Blog</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/translate-test.html">번역 테스트</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/pages/virtualbox-windou-seobiseuro-silhaenghagi.html">VirtualBox 윈도우 서비스로 실행하기</a></li>
+                    <li><a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a></li>
+                    <li class="active"><a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
-    <h1 class="entry-title">블로그 개시 자동화 하기</h1>
-    
-    <p>Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://huhushow.github.io/huhushow/beulrogeu-gaesi-jadonghwa-hagi.html" rel="bookmark"
+           title="Permalink to 블로그 개시 자동화 하기">블로그 개시 자동화 하기</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-10-12T22:00:00-04:00">
+                Published: 수 12 10월 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
+        </address>
+<p>In <a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a>.</p>
+
+</footer><!-- /.post-info -->      <p>Github pages에 글을 등록하기 위해서는 일반적으로 Jekyll 같은 정적 사이트 제작기를
 사용한다. 나는 Python이 익숙하기 때문에 <a href="http://getpelican.com/">Pelican</a> 을 사용하여 글을 쓰고 있다. 때문에 일반적인 블로그에서는 찾아보기 힘든 문제가 발생한다.</p>
 <p>Pelican을 사용하기 위한 패키지들 중 일부가 윈도우 환경에서는 정상적으로 작동하지 않는 것이다. 이런 경우 선호하는 방법인 'VM 생성 후 리눅스 설치 -&gt; 윈도우 에디터의 FTP 편집 기능으로 문서 편집' 의 방법으로 글을 쓰고 있다.</p>
 <p>이럴 경우 매번 원격으로 리눅스 VM에 접속해 github에 푸시를 해줘야 하기 때문에 이를 윈도우에서 자동화 할 방법을 찾아봤다. 두가지 방법이 떠올랐는데 리눅스에서 해당 디렉토리의 변경사항을 감지해 푸시 시켜주거나 푸시 스크립트를 작성해 원도우에서 실행시켜주는 것이다. 후자의 경우 윈도우가 아니라면 간단한 ssh 명령어로 쉽게 처리 가능했겠지만, 윈도우 cmd에서는 ssh 접속이 안되기 때문에 절차가 조금 복잡해진다. 대강 아래와 같은 방법으로 처리하게 되었다.</p>
@@ -66,6 +73,9 @@
 </ul>
 </li>
 </ul>
+    </div><!-- /.entry-content -->
+
+  </article>
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">
