@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Huhushow's Blog - Dev</title><link href="https://huhushow.github.io/huhushow/" rel="alternate"></link><link href="https://huhushow.github.io/huhushow/feeds/dev.atom.xml" rel="self"></link><id>https://huhushow.github.io/huhushow/</id><updated>2017-05-29T12:00:00-04:00</updated><entry><title>MySQL load data infile 문 upsert 하기</title><link href="https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert.html" rel="alternate"></link><published>2017-05-29T12:00:00-04:00</published><updated>2017-05-29T12:00:00-04:00</updated><author><name>huhushow@gmail.com</name></author><id>tag:huhushow.github.io,2017-05-29:/huhushow/mysql-load-data-infile-upsert.html</id><summary type="html">&lt;h3&gt;LOAD DATA INFILE 문이란?&lt;/h3&gt;
-&lt;p&gt;텍스트 파일을 읽어서 테이블로 데이터를 입력하는 명령어이다. 한번에 많은 데이터를 입력해야 할 때 주로 쓰인다. 간단한 구문이지만 파일 형식애 대한 정보를 입력해줘야 한다. 구문의 간단한 구조는 아래와 같다 자세한 정보는 &lt;a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html"&gt;MySQL Document&lt;/a&gt; 를 참조하자.&lt;/p&gt;
+&lt;p&gt;텍스트 파일을 읽어서 테이블로 데이터를 입력하는 명령어이다. 한번에 많은 데이터를 입력해야 할 때 주로 쓰인다. 간단한 구문이지만 파일 형식애 대한 정보를 입력해줘야 한다. 구문의 간단한 구조는 아래와 같다. 자세한 정보는 &lt;a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html"&gt;MySQL Document&lt;/a&gt; 를 참조하자.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;LOAD DATA INFILE &amp;#39;file_name&amp;#39;  -- 입력할 파일의 경로
 INTO TABLE tbl_name  -- 입력받을 테이블의 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;LOAD DATA INFILE 문이란?&lt;/h3&gt;
-&lt;p&gt;텍스트 파일을 읽어서 테이블로 데이터를 입력하는 명령어이다. 한번에 많은 데이터를 입력해야 할 때 주로 쓰인다. 간단한 구문이지만 파일 형식애 대한 정보를 입력해줘야 한다. 구문의 간단한 구조는 아래와 같다 자세한 정보는 &lt;a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html"&gt;MySQL Document&lt;/a&gt; 를 참조하자.&lt;/p&gt;
+&lt;p&gt;텍스트 파일을 읽어서 테이블로 데이터를 입력하는 명령어이다. 한번에 많은 데이터를 입력해야 할 때 주로 쓰인다. 간단한 구문이지만 파일 형식애 대한 정보를 입력해줘야 한다. 구문의 간단한 구조는 아래와 같다. 자세한 정보는 &lt;a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html"&gt;MySQL Document&lt;/a&gt; 를 참조하자.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;LOAD DATA INFILE &amp;#39;file_name&amp;#39;  -- 입력할 파일의 경로
 INTO TABLE tbl_name  -- 입력받을 테이블의 이름
 FIELDS  -- 라인 내의 필드들을 구분하는 방법
@@ -48,7 +48,7 @@ IGNORE 1 LINES;
 
 
 &lt;p&gt;&lt;img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi3.PNG"&gt;&lt;/p&gt;
-&lt;p&gt;중복되는 데이터가 있으면 어떻게 될까? ldi2.txt는 ldi1.txt와 중복되는 데이터를 가지고 있는 텍스트 파일이다. 아래의 구문으로 실행한 결과를 보자. &lt;/p&gt;
+&lt;p&gt;중복되는 데이터가 있으면 어떻게 될까? ldi2.txt는 ldi1.txt와 중복되는 데이터를 가지고 있는 텍스트 파일이다. 아래의 구문으로 실행한 결과를 보자.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;LOAD DATA INFILE &amp;#39;/var/tmp/ldi2.txt&amp;#39;
 INTO TABLE ldi_test
 CHARACTER SET utf8mb4
@@ -62,7 +62,7 @@ IGNORE 1 LINES;
 
 &lt;p&gt;&lt;img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi6.PNG"&gt;&lt;br&gt;
 &lt;img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi7.PNG"&gt;&lt;/p&gt;
-&lt;p&gt;id 6 의 데이터가 중복되기 때문에 Duplicate entry 에러를 발생시키고 종료됨을 알 수 있다. 중복되는 데이터가 있을 경우에도 LOAD DATA 문을 실행시키고 싶다면 어떻게 해야 할까? 이것은 흔히 말하는 upsert 기능이 필요한 순간이다. MySQL에서는 INSERT .. ON DUPLICATE KEY UPDATE, REPLACE 두 구문을 통해 upsert를 지원하고 있다. LOAD DATA 문 또한 마찬가지인데 REPLACE, IGNORE 키워드를 이용해 중복되는 데이터에 대한 처리를 할 수 있다. REPLACE는 PK 혹은 UNIQUE 키를 이용해 기존 데이터를 입력받은 데이터로 업데이트 하고 IGNORE는 입력받은 데이터를 무시하고 기존 데이터를 유지하게끔 한다. 우선 REPLACE를 사용한 결과를 보자.&lt;/p&gt;
+&lt;p&gt;id 6 의 데이터가 중복되기 때문에 'Duplicate entry' 에러를 발생시키고 종료됨을 알 수 있다. 중복되는 데이터가 있을 경우에도 LOAD DATA 문을 실행시키고 싶다면 어떻게 해야 할까? 이것은 흔히 말하는 upsert 기능이 필요한 순간이다. MySQL에서는 INSERT .. ON DUPLICATE KEY UPDATE, REPLACE 두 구문을 통해 upsert를 지원하고 있다. LOAD DATA 문 또한 마찬가지인데 REPLACE, IGNORE 키워드를 이용해 중복되는 데이터에 대한 처리를 할 수 있다. REPLACE는 PK 혹은 UNIQUE 키를 이용해 기존 데이터를 입력받은 데이터로 업데이트 하고 IGNORE는 입력받은 데이터를 무시하고 기존 데이터를 유지하게끔 한다. 우선 REPLACE를 사용한 결과를 보자.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;LOAD DATA LOCAL INFILE &amp;#39;D:/mysqltest/ldi2.txt&amp;#39;
 REPLACE INTO TABLE ldi_test
 CHARACTER SET utf8mb4

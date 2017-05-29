@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
         <meta charset="utf-8" />
-        <title>MySQL load data infile 문 upsert 하기</title>
+        <title>How to upsert via MySQL load data infile</title>
         <link rel="stylesheet" href="https://huhushow.github.io/huhushow/theme/css/main.css" />
         <link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Huhushow's Blog Atom Feed" />
 
@@ -24,8 +24,8 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert.html" rel="bookmark"
-           title="Permalink to MySQL load data infile 문 upsert 하기">MySQL load data infile 문 upsert 하기</a></h1>
+        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert-en.html" rel="bookmark"
+           title="Permalink to How to upsert via MySQL load data infile">How to upsert via MySQL load data infile</a></h1>
     </header>
 
     <div class="entry-content">
@@ -39,23 +39,23 @@
         </address>
 <p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
 Translations:
-        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert-en.html">en</a>
+        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert.html">ko</a>
 
-</footer><!-- /.post-info -->      <h3>LOAD DATA INFILE 문이란?</h3>
-<p>텍스트 파일을 읽어서 테이블로 데이터를 입력하는 명령어이다. 한번에 많은 데이터를 입력해야 할 때 주로 쓰인다. 간단한 구문이지만 파일 형식애 대한 정보를 입력해줘야 한다. 구문의 간단한 구조는 아래와 같다. 자세한 정보는 <a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html">MySQL Document</a> 를 참조하자.</p>
-<div class="highlight"><pre><span></span>LOAD DATA INFILE &#39;file_name&#39;  -- 입력할 파일의 경로
-INTO TABLE tbl_name  -- 입력받을 테이블의 이름
-FIELDS  -- 라인 내의 필드들을 구분하는 방법
-    TERMINATED BY &#39;,&#39;  -- 각 필드가 끝나는 구분문자를 지정해줌
-    ENCLOSED BY &#39;&quot;&#39;  -- 구분뒨 필드 내에서 시작/끝 을 알리는 문자를 지정해줌
-LINES  -- 각 라인을 구분하는 방법
-    TERMINATED BY &#39;\n&#39;  -- 각 라인이 끝나는 구분문자를 지정해줌
-IGNORE 1 LINES  -- 처리하지 않을 라인을 지정해줌
+</footer><!-- /.post-info -->      <h3>What is LOAD DATA INFILE?</h3>
+<p>LOAD DATA INFILE is statement for insert data from text file into database table. It is usually used when insert large amount of data at once. It is simple statement, but you should write about source file's structure. Simple syntax of this statement is as follows. If you want more detail, you can read <a href="https://dev.mysql.com/doc/refman/5.7/en/load-data.html">MySQL Document</a>.</p>
+<div class="highlight"><pre><span></span>LOAD DATA INFILE &#39;file_name&#39;  -- path of sending data file
+INTO TABLE tbl_name  -- name of receiving table
+FIELDS  -- how to separate fields in lines
+    TERMINATED BY &#39;,&#39;  -- specify a delimiter character for the end of each field
+    ENCLOSED BY &#39;&quot;&#39;  -- specify a delimiter character which tell us where is begin and end of each separated fields
+LINES  -- how to separate each lines in file
+    TERMINATED BY &#39;\n&#39;  -- specify a delimiter character for the end of each line
+IGNORE 1 LINES  -- specify which lines will not inserted
 </pre></div>
 
 
 <h3>테스트</h3>
-<p>간단한 테스트를 위해 테스트 테이블을 만들어서 실제로 값을 입력해보자. 아래의 쿼리를 사용하여 테이블을 생성하였다.</p>
+<p>For test, make a test table and insert data for test. I made a table by the following query.</p>
 <div class="highlight"><pre><span></span>CREATE TABLE `ldi_test`(  
 `id` INT NOT NULL,
 `char_col` VARCHAR(50) NOT NULL,
@@ -70,11 +70,11 @@ INSERT INTO ldi_test VALUES(3, &#39;c&#39;, 3);
 </pre></div>
 
 
-<p>실행 후 테이블에는 다음과 같은 데이터가 입력되어 있다.<br>
+<p>After execution, following data was inserted in the table.<br>
 <img alt="default data" src="https://huhushow.github.io/huhushow/images/ldi2.PNG">  </p>
-<p>테스트에 사용할 텍스트 파일은 아래와 같다.<br>
+<p>This is sample data files for test.<br>
 <img alt="insert data" src="https://huhushow.github.io/huhushow/images/ldi1.PNG"></p>
-<p>LOAD DATA INFILE 문을 실행해서 데이터를 입력해보자.</p>
+<p>Let's insert data by LOAD DATA INFILE statement.</p>
 <div class="highlight"><pre><span></span>LOAD DATA LOCAL INFILE &#39;D:/mysqltest/ldi1.txt&#39;
 INTO TABLE ldi_test
 CHARACTER SET utf8mb4
@@ -87,7 +87,7 @@ IGNORE 1 LINES;
 
 
 <p><img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi3.PNG"></p>
-<p>중복되는 데이터가 있으면 어떻게 될까? ldi2.txt는 ldi1.txt와 중복되는 데이터를 가지고 있는 텍스트 파일이다. 아래의 구문으로 실행한 결과를 보자.</p>
+<p>What happens if it has a duplicate data? ldi2.txt and ldi1 are files which have duplicate data. Let's watch the result of following query.</p>
 <div class="highlight"><pre><span></span>LOAD DATA INFILE &#39;/var/tmp/ldi2.txt&#39;
 INTO TABLE ldi_test
 CHARACTER SET utf8mb4
@@ -101,7 +101,7 @@ IGNORE 1 LINES;
 
 <p><img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi6.PNG"><br>
 <img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi7.PNG"></p>
-<p>id 6 의 데이터가 중복되기 때문에 'Duplicate entry' 에러를 발생시키고 종료됨을 알 수 있다. 중복되는 데이터가 있을 경우에도 LOAD DATA 문을 실행시키고 싶다면 어떻게 해야 할까? 이것은 흔히 말하는 upsert 기능이 필요한 순간이다. MySQL에서는 INSERT .. ON DUPLICATE KEY UPDATE, REPLACE 두 구문을 통해 upsert를 지원하고 있다. LOAD DATA 문 또한 마찬가지인데 REPLACE, IGNORE 키워드를 이용해 중복되는 데이터에 대한 처리를 할 수 있다. REPLACE는 PK 혹은 UNIQUE 키를 이용해 기존 데이터를 입력받은 데이터로 업데이트 하고 IGNORE는 입력받은 데이터를 무시하고 기존 데이터를 유지하게끔 한다. 우선 REPLACE를 사용한 결과를 보자.</p>
+<p>This query occur 'Duplicate entry' error and ended because id-6 row is already in the table. How you do if  you want to execute LOAD DATA statement even duplicate data is exists? This situation needs a function so called 'upsert'. MySQL supports upsert by two statement as 'INSERT .. ON DUPLICATE KEY UPDATE' and  'REPLACE'. LOAD DATA can handles duplicate data via 'REPLACE' and 'IGNORE' keywords. REPLACE keyword updates old data to inserted data using PK or unique key. IGNORE keyword remains old data instead of inserted data. At first, let's see result of query that use REPLACE keyword.</p>
 <div class="highlight"><pre><span></span>LOAD DATA LOCAL INFILE &#39;D:/mysqltest/ldi2.txt&#39;
 REPLACE INTO TABLE ldi_test
 CHARACTER SET utf8mb4
@@ -115,7 +115,8 @@ IGNORE 1 LINES;
 
 <p><img alt="replace data" src="https://huhushow.github.io/huhushow/images/ldi8.PNG"><br>
 <img alt="replace data" src="https://huhushow.github.io/huhushow/images/ldi9.PNG"></p>
-<p>id 6 열이 변경되었음을 확인할 수 있다. 그런데 한가지 이상한 점을 발견할 수 있다. 3 열을 입력했음에도 적용된 열의 수가 4로 나오는 것이다. 이는 REPLACE문의 특성 때문인데 <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-affected-rows.html">mysql_affected rows()</a> 문서에 이유가 나와있다. 중복 열이 발견된 경우 삭제 후 입력을 하기 때문에 적용된 열이 2가 반환된다는 것이다.</p>
+<p>You can find id-6 row was changed. By the way, you can find a weird thing. although you insert 3 lines, affected rows value is 4.
+id 6 열이 변경되었음을 확인할 수 있다. 그런데 한가지 이상한 점을 발견할 수 있다. 3 열을 입력했음에도 적용된 열의 수가 4로 나오는 것이다. 이는 REPLACE문의 특성 때문인데 <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-affected-rows.html">mysql_affected rows()</a> 문서에 이유가 나와있다. 중복 열이 발견된 경우 삭제 후 입력을 하기 때문에 적용된 열이 2가 반환된다는 것이다.</p>
 <p>IGNORE의 경우를 알아보자. </p>
 <div class="highlight"><pre><span></span>LOAD DATA LOCAL INFILE &#39;/var/tmp/ldi2.txt&#39;
 INTO TABLE ldi_test
@@ -139,8 +140,8 @@ IGNORE 1 LINES;
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'huhublog-1';
-        var disqus_identifier = 'mysql-load-data-infile-upsert.html';
-        var disqus_url = 'https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert.html';
+        var disqus_identifier = 'mysql-load-data-infile-upsert-en.html';
+        var disqus_url = 'https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert-en.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//huhublog-1.disqus.com/embed.js';
