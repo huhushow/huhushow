@@ -121,8 +121,8 @@ IGNORE 1 LINES;
 </pre></div>
 
 
-<p><img alt="ignored data" src="https://huhushow.github.io/huhushow/images/ldi6.PNG"><br>
-<img alt="ignored data" src="https://huhushow.github.io/huhushow/images/ldi7.PNG"></p>
+<p><img alt="ignored data" src="https://huhushow.github.io/huhushow/images/ldi4.PNG"><br>
+<img alt="ignored data" src="https://huhushow.github.io/huhushow/images/ldi5.PNG"></p>
 <p>에러가 아닌 경고가 발생하고 id 6 열이 무시된 것을 확인할 수 있다. 그런데 또 한가지 이상한 점을 발견할 수 있다. REPLACE 와는 다르게 IGNORE 키워드가 사용되지 않았다. 무슨 이유일까? 비밀은 LOCAL 키워드에 있다. LOCAL 키워드는 입력 파일의 위치가 서버가 아닌 원격 클라이언트에 있을 경우 사용하는 구문인데 LOCAL 키워드를 사용할 경우 REPLACE/IGNORE 를 지정하지 않을 경우 IGNORE가 기본값으로 지정되기 때문이다.</p>
 <h3>결론</h3>
 <p>MySQL의 LOAD DATA INFILE 구문은 REPLACE/IGNORE 키워드를 통해 중복 데이터에 대한 처리가 가능하며 이 동작은 LOCAL 키워드의 유무애 따라 다른 기본값을 가진다. </p>                </article>
