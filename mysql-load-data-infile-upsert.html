@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
         <meta charset="utf-8" />
-        <title>MySQL load data infile 문 사용하기</title>
+        <title>MySQL load data infile 문 upsert 하기</title>
         <link rel="stylesheet" href="https://huhushow.github.io/huhushow/theme/css/main.css" />
         <link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Huhushow's Blog Atom Feed" />
 
@@ -24,14 +24,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile.html" rel="bookmark"
-           title="Permalink to MySQL load data infile 문 사용하기">MySQL load data infile 문 사용하기</a></h1>
+        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-upsert.html" rel="bookmark"
+           title="Permalink to MySQL load data infile 문 upsert 하기">MySQL load data infile 문 upsert 하기</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2017-05-28T18:00:00-04:00">
-                Published: 일 28 5월 2017
+        <abbr class="published" title="2017-05-29T12:00:00-04:00">
+                Published: 월 29 5월 2017
         </abbr>
 
         <address class="vcard author">
@@ -70,6 +70,67 @@ INSERT INTO ldi_test VALUES(3, &#39;c&#39;, 3);
 
 <p>실행 후 테이블에는 다음과 같은 데이터가 입력되어 있다.<br>
 <img alt="default data" src="https://huhushow.github.io/huhushow/images/ldi2.PNG">  </p>
+<p>테스트에 사용할 텍스트 파일은 아래와 같다.<br>
+<img alt="insert data" src="https://huhushow.github.io/huhushow/images/ldi1.PNG"></p>
+<p>LOAD DATA INFILE 문을 실행해서 데이터를 입력해보자.</p>
+<div class="highlight"><pre><span></span>LOAD DATA LOCAL INFILE &#39;D:/mysqltest/ldi1.txt&#39;
+INTO TABLE ldi_test
+CHARACTER SET utf8mb4
+FIELDS 
+    TERMINATED BY &#39;, &#39; OPTIONALLY ENCLOSED BY &#39;&quot;&#39;
+LINES
+    TERMINATED BY &#39;\n&#39;
+IGNORE 1 LINES;
+</pre></div>
+
+
+<p><img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi3.PNG"></p>
+<p>중복되는 데이터가 있으면 어떻게 될까? ldi2.txt는 ldi1.txt와 중복되는 데이터를 가지고 있는 텍스트 파일이다. 아래의 구문으로 실행한 결과를 보자. </p>
+<div class="highlight"><pre><span></span>LOAD DATA INFILE &#39;/var/tmp/ldi2.txt&#39;
+INTO TABLE ldi_test
+CHARACTER SET utf8mb4
+FIELDS 
+    TERMINATED BY &#39;, &#39; OPTIONALLY ENCLOSED BY &#39;&quot;&#39;
+LINES
+    TERMINATED BY &#39;\n&#39;
+IGNORE 1 LINES;
+</pre></div>
+
+
+<p><img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi6.PNG"><br>
+<img alt="inserted data" src="https://huhushow.github.io/huhushow/images/ldi7.PNG"></p>
+<p>id 6 의 데이터가 중복되기 때문에 Duplicate entry 에러를 발생시키고 종료됨을 알 수 있다. 중복되는 데이터가 있을 경우에도 LOAD DATA 문을 실행시키고 싶다면 어떻게 해야 할까? 이것은 흔히 말하는 upsert 기능이 필요한 순간이다. MySQL에서는 INSERT .. ON DUPLICATE KEY UPDATE, REPLACE 두 구문을 통해 upsert를 지원하고 있다. LOAD DATA 문 또한 마찬가지인데 REPLACE, IGNORE 키워드를 이용해 중복되는 데이터에 대한 처리를 할 수 있다. REPLACE는 PK 혹은 UNIQUE 키를 이용해 기존 데이터를 입력받은 데이터로 업데이트 하고 IGNORE는 입력받은 데이터를 무시하고 기존 데이터를 유지하게끔 한다. 우선 REPLACE를 사용한 결과를 보자.</p>
+<div class="highlight"><pre><span></span>LOAD DATA LOCAL INFILE &#39;D:/mysqltest/ldi2.txt&#39;
+REPLACE INTO TABLE ldi_test
+CHARACTER SET utf8mb4
+FIELDS 
+    TERMINATED BY &#39;, &#39; OPTIONALLY ENCLOSED BY &#39;&quot;&#39;
+LINES
+    TERMINATED BY &#39;\n&#39;
+IGNORE 1 LINES;
+</pre></div>
+
+
+<p><img alt="replace data" src="https://huhushow.github.io/huhushow/images/ldi8.PNG"><br>
+<img alt="replace data" src="https://huhushow.github.io/huhushow/images/ldi9.PNG"></p>
+<p>id 6 열이 변경되었음을 확인할 수 있다. 그런데 한가지 이상한 점을 발견할 수 있다. 3 열을 입력했음에도 적용된 열의 수가 4로 나오는 것이다. 이는 REPLACE문의 특성 때문인데 <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-affected-rows.html">mysql_affected rows()</a> 문서에 이유가 나와있다. 중복 열이 발견된 경우 삭제 후 입력을 하기 때문에 적용된 열이 2가 반환된다는 것이다.</p>
+<p>IGNORE의 경우를 알아보자. </p>
+<div class="highlight"><pre><span></span>LOAD DATA LOCAL INFILE &#39;/var/tmp/ldi2.txt&#39;
+INTO TABLE ldi_test
+CHARACTER SET utf8mb4
+FIELDS 
+    TERMINATED BY &#39;, &#39; OPTIONALLY ENCLOSED BY &#39;&quot;&#39;
+LINES
+    TERMINATED BY &#39;\n&#39;
+IGNORE 1 LINES;
+</pre></div>
+
+
+<p><img alt="ignored data" src="https://huhushow.github.io/huhushow/images/ldi6.PNG"><br>
+<img alt="ignored data" src="https://huhushow.github.io/huhushow/images/ldi7.PNG"></p>
+<p>에러가 아닌 경고가 발생하고 id 6 열이 무시된 것을 확인할 수 있다. 그런데 또 한가지 이상한 점을 발견할 수 있다. REPLACE 와는 다르게 IGNORE 키워드가 사용되지 않았다. 무슨 이유일까? 비밀은 LOCAL 키워드에 있다. LOCAL 키워드는 입력 파일의 위치가 서버가 아닌 원격 클라이언트에 있을 경우 사용하는 구문인데 LOCAL 키워드를 사용할 경우 REPLACE/IGNORE 를 지정하지 않을 경우 IGNORE가 기본값으로 지정되기 때문이다.</p>
+<h3>결론</h3>
+<p>MySQL의 LOAD DATA INFILE 구문은 REPLACE/IGNORE 키워드를 통해 중복 데이터에 대한 처리가 가능하며 이 동작은 LOCAL 키워드의 유무애 따라 다른 기본값을 가진다. </p>
     </div><!-- /.entry-content -->
 
   </article>
