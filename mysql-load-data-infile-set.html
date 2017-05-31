@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
         <meta charset="utf-8" />
-        <title>번역 테스트</title>
+        <title>MySQL load data infile 문 set 절 알아보기</title>
         <link rel="stylesheet" href="https://huhushow.github.io/huhushow/theme/css/main.css" />
         <link href="https://huhushow.github.io/huhushow/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Huhushow's Blog Atom Feed" />
 
@@ -17,40 +17,48 @@
                 <h1><a href="https://huhushow.github.io/huhushow/">Huhushow's Blog </a></h1>
                 <nav><ul>
                     <li><a href="https://huhushow.github.io/huhushow/pages/about-me.html">About me</a></li>
-                    <li><a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a></li>
-                    <li class="active"><a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a></li>
+                    <li class="active"><a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a></li>
+                    <li><a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://huhushow.github.io/huhushow/translate-test.html" rel="bookmark"
-           title="Permalink to 번역 테스트">번역 테스트</a></h1>
+        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-set.html" rel="bookmark"
+           title="Permalink to MySQL load data infile 문 set 절 알아보기">MySQL load data infile 문 set 절 알아보기</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2017-05-28T14:00:00-04:00">
-                Published: 일 28 5월 2017
+        <abbr class="published" title="2017-05-30T22:00:00-04:00">
+                Published: 화 30 5월 2017
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="https://huhushow.github.io/huhushow/author/huhushowgmailcom.html">huhushow@gmail.com</a>
         </address>
-<p>In <a href="https://huhushow.github.io/huhushow/category/diary.html">Diary</a>.</p>
+<p>In <a href="https://huhushow.github.io/huhushow/category/dev.html">Dev</a>.</p>
 Translations:
-        <a href="https://huhushow.github.io/huhushow/translate-test-en.html">en</a>
+        <a href="https://huhushow.github.io/huhushow/mysql-load-data-infile-set-en.html">en</a>
 
-</footer><!-- /.post-info -->      <p>이것은 번역 테스트 입니다.</p>
+</footer><!-- /.post-info -->      <h3>SET 절은 언제 쓸까?</h3>
+<p><a href="{filename}/mysql_load_data.md">지난 글</a>에서는 LOAD DATA 시 중복 데이터가 있는 경우에 대해 알아보았다. 텍스트 파일을 다루다 보면 또 다른 문제가 있는데 바로 테이과 텍스트 파일의 구조가 서로 다른 경우이다. 매우 빈번하게 발생하는 문제이기 때문에 LOAD DATA 문도 이에 대한 해결책을 가지고 있다. 그것이 바로 오늘 소개할 SET 구문이다. 테이블과 텍스트 파일의 구조가 다른 경우는 어떤 경우가 있을까? 크게 다음의 4가지가 있다.  </p>
+<ul>
+<li>테이블 칼럼의 순서와 텍스트 파일의 필드의 순서가 다른 경우</li>
+<li>자료의 형식이 각자 다를 경우</li>
+<li>텍스트 파일에 특정 칼럼의 데이터가 없거나 불필요한 데이터가 있는경우</li>
+</ul>
+<p>위의 경우에 어떤 식으로 SET 절을 활용하는지 알아보도록 하자.</p>
+<h3>순서가 다른 경우</h3>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'huhublog-1';
-        var disqus_identifier = 'translate-test.html';
-        var disqus_url = 'https://huhushow.github.io/huhushow/translate-test.html';
+        var disqus_identifier = 'mysql-load-data-infile-set.html';
+        var disqus_url = 'https://huhushow.github.io/huhushow/mysql-load-data-infile-set.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//huhublog-1.disqus.com/embed.js';
